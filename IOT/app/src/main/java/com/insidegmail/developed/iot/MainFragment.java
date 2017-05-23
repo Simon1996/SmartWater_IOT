@@ -310,7 +310,7 @@ public class MainFragment extends Fragment {
         @Override
         protected Boolean doInBackground(String... strings) {
             String token = strings[0];
-            DateFormat df = new SimpleDateFormat("dd.MM.yyyy G");
+            DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
             String date = df.format(Calendar.getInstance().getTime());
 
             JSONObject post = new JSONObject();
@@ -321,7 +321,7 @@ public class MainFragment extends Fragment {
                 post.put("locationx",locationx_str);
                 post.put("usercount",user_count_str);
                 post.put("id",automat_id_str);
-                post.put("lastupdate","21.02.2012");
+                post.put("lastupdate",date);
                 post.put("status",status_str);
 
                 JSONObject object = Util.getResponse(Str.EDIT_AUTOMAT,post);
